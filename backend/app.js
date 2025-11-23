@@ -1,9 +1,9 @@
 import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
-//import loginRoutes from './routes/loginRoutes.js';
+import loginRoutes from './routes/auth/loginRoutes.js';
 //import userRoutes from './routes/userRoutes.js';
-//import registerRoutes from './routes/registerRoutes.js';
+import registerRoutes from './routes/auth/registerRoutes.js';
 //import productRoutes from './routes/productRoutes.js';
 //import categoryRoutes from './routes/categoryRoutes.js';
 //import adminRoutes from './routes/adminRoutes.js';
@@ -18,9 +18,9 @@ app.use(cors());
 app.use(express.json());
 
 
-//app.use('/api/login', loginRoutes);
+app.use("/api/auth/login", loginRoutes);
 //app.use('/api/users', userRoutes);
-//app.use('/api/register', registerRoutes);
+app.use("/api/auth/register", registerRoutes);
 //app.use('/api/products', productRoutes);
 //app.use('/api/categories', categoryRoutes);
 //app.use('/api/admin', adminRoutes);
