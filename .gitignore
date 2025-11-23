@@ -1,0 +1,122 @@
+# ----------------------------------------
+# Node.js
+# ----------------------------------------
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+package-lock.json
+
+# Production build
+dist/
+build/
+
+# Environment variables
+.env
+.env.local
+.env.development
+.env.production
+.env.test
+
+# Logs
+logs/
+*.log
+*.log.*
+debug.log
+lerna-debug.log
+
+# ----------------------------------------
+# Python / Backend (if using Flask, FastAPI, Django etc.)
+# ----------------------------------------
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+
+# Virtual environments
+env/
+venv/
+ENV/
+.venv/
+
+# Python packages
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Mypy / Pyright / Typecheck
+.mypy_cache/
+.pyre/
+.pytype/
+
+# Jupyter Notebooks
+.ipynb_checkpoints
+
+# ----------------------------------------
+# VS Code
+# ----------------------------------------
+.vscode/
+.history/
+*.code-workspace
+
+# ----------------------------------------
+# OS Files (Windows / macOS)
+# ----------------------------------------
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Mac
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+._*
+
+# ----------------------------------------
+# Mongo / Database Dumps
+# ----------------------------------------
+dump/
+*.bson
+*.gz
+
+# ----------------------------------------
+# Uploads (if your app stores user files)
+# ----------------------------------------
+uploads/
+public/uploads/
+client/public/uploads/
+
+# ----------------------------------------
+# React / Frontend
+# ----------------------------------------
+*.cache/
+.cache/
+.next/
+.out/
+.svelte-kit/
+temp/
+tmp/
+
+# React build artifacts
+client/build/
+client/node_modules/
+
+# ----------------------------------------
+# Misc
+# ----------------------------------------
+*.pid
+*.seed
+*.pid.lock
+
+coverage/
+.idea/
+*.iml
+
+# Folder backups
+*.bak
+*.tmp
+*.swp
