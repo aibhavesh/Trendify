@@ -1,36 +1,43 @@
-import mongoose from 'mongoose';
+import mongoose from "mongoose";
+import bcrypt from "bcrypt";
 
 const userSchema = new mongoose.Schema(
-    {
-        name :{
-            type : String,
-            required : [true, "Name is required"],
-            trim : true,
-        },
-        email :{
-            type : String,
-            required : [true, "Email is required"],
-            trim : true,
-            unique : true,
-            lowercase : true,
-        },
-        password :{
-            type : String,
-            required : [true, "Password is required"],
-            minlenghth : [6, "Password must be at least 6 characters long"],
-        },
-        role :{
-            type : String,
-            enum : ['user', 'admin'],
-            default : 'user',
-
-        },
+  {
+    name: {
+      type: String,
+      required: [true, "Name is required"],
+      trim: true,
     },
-    {
-        timestamps : true
-    }
+    email: {
+      type: String,
+      required: [true, "Email is required"],
+      trim: true,
+      unique: true,
+      lowercase: true,
+    },
+    password: {
+      type: String,
+      required: [true, "Password is required"],
+      minlength: [6, "Password must be at least 6 characters"],
+    },
+    role: {
+      type: String,
+      enum: ["user", "admin"],
+      default: "user",
+    },
+  },
+  {
+    timestamps: true,
+  }
 );
 
-const UserModel = mongoose.model('User', userSchema);
+// ⭐ Mongoose v8 compatible hook (NO NEXT)
+userSchema.pre("save", async function () {
+  if (!this.isModified("password")) return;
 
-export default UserModel;
+  const salt = await bcrypt.genSalt(10);
+  this.password = await bcrypt.hash(this.password, salt);
+});
+
+const User = mongoose.model("User", userSchema);
+export default User;
