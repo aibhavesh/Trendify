@@ -42,7 +42,6 @@ export default function App() {
   return (
     <Suspense fallback={<Loader />}>
       <Routes>
-        {/* ===== Customer routes with Navbar + Footer ===== */}
         <Route element={<MainLayout />}>
           <Route path="/" element={<Home />} />
           <Route path="/products" element={<Products />} />
