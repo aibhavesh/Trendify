@@ -29,7 +29,7 @@ const app = express();
 app.disable("x-powered-by");
 app.set("trust proxy", 1);
 
-const defaultOrigins = ["http://localhost:5173", "https://trendify-fi82.onrender.com"];
+const defaultOrigins = ["http://localhost:5173", "https://trendify-4dv1.onrender.com/api","https://trendify-4dv1.onrender.com"];
 const configuredOrigins = (process.env.CORS_ORIGINS || "")
   .split(",")
   .map((origin) => origin.trim())
