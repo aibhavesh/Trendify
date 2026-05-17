@@ -8,10 +8,6 @@ yarn-error.log*
 pnpm-debug.log*
 package-lock.json
 
-# Production build
-dist/
-build/
-
 # Environment variables
 .env
 .env.local
